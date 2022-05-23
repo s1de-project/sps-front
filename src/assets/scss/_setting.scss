@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("../font/Noto_Serif_KR/NotoSerifKR-Medium.otf") format('otf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("../font/Noto_Serif_KR/NotoSerifKR-Bold.otf") format('otf');
+  font-weight: bold;
+}
+/* setting */
+*, :before, :after{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-style: normal;
+  vertical-align: top;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  outline: none;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th, td {
+  vertical-align: middle;
+  word-break: keep-all;
+}
+ul, ol, dl {
+  list-style: none;
+  word-break: keep-all;
+}
+hr {
+  display: none;
+}
+caption, figcaption, legend {
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  height: 0;
+  visibility: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+button {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: none;
+  vertical-align: middle;
+  appearance: none;
+  font-family:"Noto Sans KR", "맑은 고딕", sans-serif;
+  outline: none;
+}
+select {
+  appearance: none;
+  font-family:"Noto Sans KR", "맑은 고딕", sans-serif;
+}
+select::-ms-expand {
+  display: none;
+}
+input {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-appearance: none;
+  outline: none;
+}
+body {
+  font-family:"Noto Sans KR", "맑은 고딕", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #1d1c1d; 
+  line-height: 1.2;
+}
