@@ -4,7 +4,7 @@
       <router-link to="/PageList">PageList</router-link>
     </div>
     <h2>GUIDE</h2>
-    
+
     <h3 class="mt-10">Tooltip(툴팁)</h3>
     <div class="flex-s">
       왼쪽
@@ -116,6 +116,8 @@
             <p>personal에서 로그아웃</p>
           </a>
         </div>
+      </div>
+      <div class="modal-bg" @click="toggleInfo">
       </div>
     </div>
   </div>

@@ -52,6 +52,8 @@
             </a>
           </div>
         </div>
+        <div class="modal-bg" @click="toggleInfo">
+        </div>
       </div>
     </div>
     <div class="p-search">

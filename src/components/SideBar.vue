@@ -87,6 +87,8 @@
             </a>
           </div>
         </div>
+        <div class="modal-bg" @click="toggleInfo">
+        </div>
       </div>
       <a href="#" class="p-new-message tooltip">
         <div class="ico-message">
@@ -172,6 +174,8 @@
               <p class="fs-13"><span class="cl-blue font-b">환경설정</span>에서 이 목록을 사용자 지정하세요.</p>
             </a>
           </div>
+        </div>
+        <div class="modal-bg" @click="toggleInfo2">
         </div>
       </div>
       <div class="p-list-item accordion-menu-wrap">
