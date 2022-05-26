@@ -106,6 +106,14 @@
           <p>Slack Connect</p>
         </a>
       </div>
+      <div class="p-list-item">
+        <router-link to="/ChannelBrowser">
+          <div class="ico-company">
+            <img src="../assets/images/icon/ico-company.png" alt="">
+          </div>
+          <p>채널 브라우저</p>
+        </router-link>
+      </div>
       <div class="p-list-item menu-list-wrap" v-bind:class="{ on : isOn2 }">
         <a href="javascript:void(0)" @click="toggleInfo2">
           <div class="ico-more">
@@ -178,8 +186,21 @@
         <div class="modal-bg" @click="toggleInfo2">
         </div>
       </div>
-      <div class="p-list-item accordion-menu-wrap">
-        <a href="javascript:void(0)" @click="toggleInfo3">채널</a>
+      <div class="p-list-item accordion-menu-wrap menu-list-wrap" :class="{ on : isActive }" @contextmenu.prevent>
+        <a href="javascript:void(0)" @click="toggleInfo3" @mousedown.right="rightList" @contextmenu.prevent>채널</a>
+				<!-- 우클릭시 펼쳐짐 -->			
+				<div class="menu-list">
+					<div class="menu-item">
+						<a href="#">
+							<p>채널 로그아웃</p>
+						</a>
+						<a href="#">
+							<p>채널 관리</p>
+						</a>
+					</div>
+				</div>
+				<div class="modal-bg" @click="rightList">
+				</div>
         <div class="accordion-menu" v-bind:class="{ on : isOn3 }">
           <ul>
             <li class="on" @click="selectItem($event)">
@@ -206,13 +227,25 @@
                 <p>test</p>
               </a>
             </li>
-            <li class="add-btn">
-              <a href="#">
+            <li class="add-btn menu-list-wrap" v-bind:class="{ on : isOn4 }">
+              <a href="javascript:void(0)" @click="toggleInfo4">
                 <div class="ico-add">
                   <img src="../assets/images/icon/ico-add.png" alt="">
                 </div>
                 <p>채널 추가</p>
               </a>
+							<div class="menu-list">
+								<div class="menu-item">
+									<a href="#">
+										<p>새 채널 생성</p>
+									</a>
+									<a href="#">
+										<p>모든 채널 탐색</p>
+									</a>
+								</div>
+							</div>
+							<div class="modal-bg" @click="toggleInfo4">
+							</div>
             </li>
           </ul>
         </div>
@@ -227,6 +260,14 @@
                   <img src="../assets/images/icon/ico-user.png" alt="">
                 </div>
                 <p>강민지 <span>나</span></p>
+              </a>
+            </li>
+            <li class="user-display">
+              <a href="#">
+                <div class="ico-user">
+                  <img src="../assets/images/icon/ico-user.png" alt="">
+                </div>
+                <p>남동윤</p>
               </a>
             </li>
             <li class="add-btn type2">
@@ -251,7 +292,9 @@
         projectName: "Side Project(PaaS-TA)",
         isOn : false,
         isOn2 : false,
-        isOn3 : true
+        isOn3 : true,
+        isOn4 : false,
+        isActive : false,
       }
     },
     methods: {
@@ -264,6 +307,12 @@
       toggleInfo3() {
         this.isOn3 = !this.isOn3;
       },
+      toggleInfo4() {
+        this.isOn4 = !this.isOn4;
+      },
+			rightList() {
+				this.isActive = !this.isActive
+			},
     }
   }
 </script>

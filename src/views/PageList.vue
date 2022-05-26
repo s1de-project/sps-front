@@ -199,6 +199,21 @@
 											</td>
 											<td class="memo"></td>
 										</tr>
+										<tr>
+											<td class="d1">채널</td>
+											<td class="d2">채널브라우저</td>
+											<td class="d3"></td>
+											<td class="director">/ChannelBrowser</td>
+											<td class="file">ChannelBrowser.vue</td>
+											<td class="date">
+												<ul class="hislist">
+													<li>
+														<router-link to="/ChannelBrowser" class="flag-none">22.05.26</router-link>
+													</li>
+												</ul>
+											</td>
+											<td class="memo"></td>
+										</tr>
 									</tbody>
 								</table>
 							</div>

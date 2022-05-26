@@ -48,9 +48,12 @@
   display: flex;
 }
 
+.p-section > div:not(.side-bar) {
+  width: calc(100vw - 260px);
+}
+
 .p-section .p-content-area {
   padding: 20px;
-  width: 100%;
 }
 
 .flex-c {
@@ -181,7 +184,7 @@
 .menu-list-wrap .menu-list {
   position: absolute;
   top: 35px;
-  left: 10px;
+  left: 50%;
   display: none;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -217,6 +220,7 @@
 
 .menu-list-wrap .menu-list .menu-item a > p, .menu-list-wrap .menu-list .menu-item .depth > p {
   cursor: pointer;
+  color: #333;
 }
 
 .menu-list-wrap .menu-list .menu-item a .user-pic, .menu-list-wrap .menu-list .menu-item .depth .user-pic {
@@ -371,7 +375,7 @@
   border-top: 0;
 }
 
-.menu-list-wrap.on .menu-list {
+.menu-list-wrap.on > .menu-list {
   display: block;
 }
 
@@ -382,7 +386,7 @@
   font-size: 20px;
 }
 
-.menu-list-wrap.on .modal-bg {
+.menu-list-wrap.on > .modal-bg {
   display: block;
 }
 
@@ -395,6 +399,50 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+/* title */
+.title-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+/* btn */
+.btn-type1 {
+  color: #1d1c1d;
+  font-weight: bold;
+  padding: 3px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* modal */
+.modal-wrap .modal-basic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  width: 520px;
+  height: 520px;
+  background-color: #fff;
+  z-index: 2;
+  display: none;
+}
+
+.modal-wrap.on .modal-bg {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.233);
 }
 
 @font-face {
@@ -645,7 +693,7 @@ body {
           transform: translateY(-50%);
 }
 
-.side-bar .accordion-menu-wrap .accordion-menu ul li a {
+.side-bar .accordion-menu-wrap .accordion-menu ul li > a {
   padding: 5px 25px 5px 40px;
   color: #fff;
   opacity: .5;
@@ -654,11 +702,11 @@ body {
   display: flex;
 }
 
-.side-bar .accordion-menu-wrap .accordion-menu ul li a *[class^=ico-] {
+.side-bar .accordion-menu-wrap .accordion-menu ul li > a *[class^=ico-] {
   margin-right: 10px;
 }
 
-.side-bar .accordion-menu-wrap .accordion-menu ul li a *[class^=ico-].ico-message img {
+.side-bar .accordion-menu-wrap .accordion-menu ul li > a *[class^=ico-].ico-message img {
   -webkit-filter: invert(1);
           filter: invert(1);
 }
