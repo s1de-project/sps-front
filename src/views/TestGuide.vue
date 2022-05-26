@@ -117,6 +117,24 @@
       <div class="modal-bg" @click="toggleInfo">
       </div>
     </div>
+
+		<h3 class="mt-10">버튼</h3>
+		<button class="btn-type1 modal-btn">채널 생성</button>
+
+		<h3 class="mt-10">타이틀</h3>
+		<div class="title-area">
+			<h3 class="fs-18">채널 브라우저</h3>
+			<div class="modal-wrap">
+				<button class="btn-type1 modal-btn">채널 생성</button>
+				<div class="modal-basic">
+					<div class="modal-header">
+						<p>채널 생성</p>
+					</div>
+					<div class="modal-content"></div>
+				</div>
+				<div class="modal-bg"></div>
+			</div>
+		</div>
   </div>
 </template>
 
