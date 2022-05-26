@@ -1,8 +1,5 @@
 <template>
   <div class="p-content-area">
-    <div class="page-list-box">
-      <router-link to="/PageList">PageList</router-link>
-    </div>
     <h2>GUIDE</h2>
 
     <h3 class="mt-10">Tooltip(툴팁)</h3>

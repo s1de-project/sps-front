@@ -1,0 +1,158 @@
+.page-list-wrap {
+	.page-list-tit { 
+		text-align: center;
+	}
+	.page-list-content {
+		margin-top: 30px;
+		.tb-top {
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			display: flex;
+			& > dl {
+				display: flex;
+				align-items: center;
+				& > dt {
+					background-color: #9c9c9c;
+					color: #fff;
+					padding: 10px;
+					text-align: center;
+				}
+				& > dd {
+					display: flex;
+					padding: 10px;
+					min-width: 200px;
+					dl {
+						display: flex;
+						align-items: center;
+					}
+				}
+			}
+		}
+		// flag
+		*[class^=flag-] {
+			padding: 2px 5px;
+			border-radius: 4px;
+			margin: 0 5px;
+			background-color: #ddd;
+			&.flag-total {
+				background-color: #ddd;
+				color: #02034e;
+			}
+			&.flag-end {
+				background-color: #1a5599;
+				color: #fff;
+			}
+			&.flag-edit {
+				background-color: #eeab24;
+				color: #800;
+			}
+			&.flag-progress {
+				background-color: #999;
+				color: #fff;
+			}
+			&.flag-hold {
+				background-color: #DDC8DA;
+			}
+			&.flag-del {
+				background-color: #999;
+				color: #333;
+				text-decoration: line-through;
+			}
+			&.flag-guide {
+				background-color: #bad8ba;
+			}
+			&.flag-link {
+				background-color: #b7cedf;
+			}
+			&.flag-nohtml {
+				background-color: #ddd;
+			}
+		}
+		.list-style-type1 {
+			margin-top: 20px;
+			li {
+				color: #666;
+				display: flex;
+				align-items: center;
+				padding: 5px 0;
+				&:before {
+					content:'ㆍ'
+				}
+				span {
+					margin-left: 5px;
+				}
+			}
+		}
+		// tab
+		.tab-cont-wrap {
+			margin-top: 20px;
+			.tab-btn {
+				display: flex;
+				border-bottom: 2px solid #333;
+				li {
+					a {
+						display: block;
+						padding: 10px 20px;
+						border-top: 1px solid #ccc;
+						border-right: 1px solid #ccc;
+
+					}
+					&:first-child {
+						border-left: 1px solid #ccc;
+					}
+					&.active {
+						a {
+							background-color: #333;
+							color: #fff;
+						}
+					}
+				}
+			}
+			.tab-content {
+				font-size: 12px;
+				.tb-con-wrap {
+					tr {
+						th {
+							border: 1px solid #ccc;
+							background-color: #999;
+							color: #fff;
+							font-weight: 400;
+							padding: 5px 10px;
+						}
+						td {
+							border: 1px solid #ccc;
+							font-weight: 400;
+							padding: 5px 10px;
+							&.director, &.file, &.date, &.memo {
+								text-align: center;
+							}
+							.editlist {
+								a {
+									position: relative;
+									ul {
+										display: none;
+										position: absolute;
+										top: 20px;
+										left: 30px;
+										width: max-content;
+										text-align: left;
+										background-color: #ccc;
+										color: #333;
+										font-size: 12px;
+										padding: 10px;
+										border-radius: 14px;
+									}
+									&:hover {
+										ul {
+											display: block;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
