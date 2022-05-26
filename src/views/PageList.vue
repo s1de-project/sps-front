@@ -165,7 +165,7 @@
 											<td class="date">
 												<ul class="hislist">
 													<li>
-														<router-link to="/" class="flag-none">22.05.26</router-link>
+														<a href="/" class="flag-none">22.05.26</a>
 													</li>
 												</ul>
 											</td>
@@ -179,7 +179,7 @@
 											<td class="date">
 												<ul class="hislist">
 													<li>
-														<router-link to="/" class="flag-end">22.05.26</router-link>
+														<a href="/" class="flag-end">22.05.26</a>
 													</li>
 												</ul>
 											</td>
@@ -235,7 +235,7 @@
 											<td class="date">
 												<ul class="editlist">
 													<li>
-														<router-link to="#none" class="flag-edit">
+														<router-link to="/AboutView" class="flag-edit">
 															00.00.00
 															<ul>
 																<li>00.00.00<br />1.주석명 : 00.00.00 ~ 수정</li>

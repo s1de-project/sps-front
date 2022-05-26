@@ -125,6 +125,7 @@ export default {
   data() {
     return {
       isOn : false,
+      projectName: "Side Project(PaaS-TA)",
     }
   },
   methods: {
