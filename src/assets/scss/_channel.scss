@@ -1,0 +1,99 @@
+// 채널브라우저
+.c-list-wrap {
+	margin-top: 40px;
+	margin-bottom: 50px;
+	.t-tit {
+		display: flex;
+		justify-content: space-between;
+		font-size: 13px;
+		padding: 5px 0;
+		p {
+			font-weight: 400;
+			&:hover {
+				color: #333;
+			}
+		}
+		& > div {
+			display: flex;
+			div {
+				a {
+					padding: 2px 5px;
+					&:hover {
+						background-color: #f8f6f6;
+					}
+				}
+			}
+		}
+	}
+	.c-list {
+		li {
+			border-top: 1px solid #ccc;
+			position: relative;
+			a {
+				padding: 16px 12px; 
+				display: block;
+				.tit {
+					font-weight: bold;
+					line-height: 1.5;
+					margin-bottom: 5px;
+					position: relative;
+					display: inline-block;
+					padding-right: 30px;
+					.tooltip {
+						display: none;
+						position: absolute;
+						top: 0;
+						right: 0;
+						font-size: 13px;
+						color: #1d1c1db3;
+						font-weight: normal;
+						.tooltip-msg-top {
+							font-size: 13px;
+						}
+					}
+				}
+				& > div {
+					span {
+						color: #1d1c1db3;
+						font-size: 13px;
+						&::before {
+							content: 'ㆍ'
+						}
+						&:first-child {
+							&:before {
+								content: ''
+							}
+						}
+						&.present {
+							color: #007a5a;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+			.c-btn {
+				display: none;
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				button {
+					margin-right: 10px;
+				}
+			}
+			&:hover {
+				background-color: #f8f6f6;
+				a {
+					.tit {
+						.tooltip {
+							display: block;
+						}
+					}
+				}
+				.c-btn {
+					display: block;
+				}
+			}
+		}
+	}
+}
