@@ -2,8 +2,8 @@
   <div class="side-bar">
     <div class="p-head">
       <!-- class="on" 추가시 펼쳐짐-->
-      <div class="p-info menu-list-wrap" v-bind:class="{ on : isOn }">
-        <a href="javascript:void(0)" class="fs-18-wh" @click="toggleInfo"><span>{{ projectName }}</span></a>
+      <div class="p-info menu-list-wrap">
+        <a href="javascript:void(0)" class="fs-18-wh" @click="toggleInfo($event)"><span>{{ projectName }}</span></a>
         <div class="menu-list">
           <div class="menu-item">
             <router-link to="/">
@@ -87,7 +87,7 @@
             </a>
           </div>
         </div>
-        <div class="modal-bg" @click="toggleInfo">
+        <div class="modal-bg" @click="toggleInfo($event)">
         </div>
       </div>
       <a href="#" class="p-new-message tooltip">
@@ -99,12 +99,20 @@
     </div>
     <div class="p-list">
       <div class="p-list-item">
-        <a href="#">
+        <router-link to="/">
           <div class="ico-company">
             <img src="../assets/images/icon/ico-company.png" alt="">
           </div>
-          <p>Slack Connect</p>
-        </a>
+          <p>Page List</p>
+        </router-link>
+      </div>
+      <div class="p-list-item">
+        <router-link to="/TestGuide">
+          <div class="ico-company">
+            <img src="../assets/images/icon/ico-company.png" alt="">
+          </div>
+          <p>GUIDE</p>
+        </router-link>
       </div>
       <div class="p-list-item">
         <router-link to="/ChannelBrowser">
@@ -114,8 +122,8 @@
           <p>채널 브라우저</p>
         </router-link>
       </div>
-      <div class="p-list-item menu-list-wrap" v-bind:class="{ on : isOn2 }">
-        <a href="javascript:void(0)" @click="toggleInfo2">
+      <div class="p-list-item menu-list-wrap">
+        <a href="javascript:void(0)" @click="toggleInfo($event)">
           <div class="ico-more">
             <img src="../assets/images/icon/ico-more.png" alt="">
           </div>
@@ -183,7 +191,7 @@
             </a>
           </div>
         </div>
-        <div class="modal-bg" @click="toggleInfo2">
+        <div class="modal-bg" @click="toggleInfo($event)">
         </div>
       </div>
       <div class="p-list-item accordion-menu-wrap menu-list-wrap" :class="{ on : isActive }" @contextmenu.prevent>
@@ -202,8 +210,8 @@
 				<div class="modal-bg" @click="rightList">
 				</div>
         <div class="accordion-menu" v-bind:class="{ on : isOn3 }">
-          <ul>
-            <li class="on" @click="selectItem($event)">
+          <ul @click="selectItem($event)">
+            <li>
               <a href="#">
                 <div class="ico-hash">
                   <img src="../assets/images/icon/ico-hash.png" alt="">
@@ -227,8 +235,8 @@
                 <p>test</p>
               </a>
             </li>
-            <li class="add-btn menu-list-wrap" v-bind:class="{ on : isOn4 }">
-              <a href="javascript:void(0)" @click="toggleInfo4">
+            <li class="add-btn menu-list-wrap" :class="{ on : isOn2 }">
+              <a href="javascript:void(0)" @click="toggleInfo2">
                 <div class="ico-add">
                   <img src="../assets/images/icon/ico-add.png" alt="">
                 </div>
@@ -244,17 +252,17 @@
 									</a>
 								</div>
 							</div>
-							<div class="modal-bg" @click="toggleInfo4">
+							<div class="modal-bg" @click="toggleInfo2">
 							</div>
             </li>
           </ul>
         </div>
       </div>
       <div class="p-list-item accordion-menu-wrap">
-        <a href="#">다이렉트 메시지</a>
-        <div class="accordion-menu on">
-          <ul>
-            <li class="user-display">
+        <a href="#" @click="toggleInfo4">다이렉트 메시지</a>
+        <div class="accordion-menu " :class="{ on : isOn4 }">
+          <ul @click="selectItem($event)">
+            <li class="user-display on">
               <a href="#">
                 <div class="ico-user">
                   <img src="../assets/images/icon/ico-user.png" alt="">
@@ -290,17 +298,16 @@
     data() {
       return {
         projectName: "Side Project(PaaS-TA)",
-        isOn : false,
         isOn2 : false,
         isOn3 : true,
-        isOn4 : false,
+        isOn4 : true,
         isActive : false,
       }
     },
     methods: {
-      toggleInfo() {
-        this.isOn = !this.isOn;
-      },
+			toggleInfo(event) {
+				event.target.parentNode.classList.toggle("on")
+			},
       toggleInfo2() {
         this.isOn2 = !this.isOn2;
       },
@@ -313,6 +320,9 @@
 			rightList() {
 				this.isActive = !this.isActive
 			},
+			selectItem(event) {
+				event.target.parentNode.classList.toggle("on");
+			}
     }
   }
 </script>

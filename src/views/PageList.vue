@@ -157,7 +157,7 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td class="d1" rowspan="3">공통</td>
+											<td class="d1" rowspan="4">공통</td>
 											<td class="d2">메인</td>
 											<td class="d3"></td>
 											<td class="director">/</td>
@@ -200,6 +200,20 @@
 											<td class="memo"></td>
 										</tr>
 										<tr>
+											<td class="d2">검색결과</td>
+											<td class="d3"></td>
+											<td class="director">/SearchResults</td>
+											<td class="file">SearchResults.vue</td>
+											<td class="date">
+												<ul class="hislist">
+													<li>
+														<router-link to="/SearchResults" class="flag-none">22.05.30</router-link>
+													</li>
+												</ul>
+											</td>
+											<td class="memo"></td>
+										</tr>
+										<tr>
 											<td class="d1">채널</td>
 											<td class="d2">채널브라우저</td>
 											<td class="d3"></td>
@@ -208,7 +222,7 @@
 											<td class="date">
 												<ul class="hislist">
 													<li>
-														<router-link to="/ChannelBrowser" class="flag-none">22.05.26</router-link>
+														<router-link to="/ChannelBrowser" class="flag-end">22.05.26</router-link>
 													</li>
 												</ul>
 											</td>

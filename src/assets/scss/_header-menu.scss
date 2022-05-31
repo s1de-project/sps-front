@@ -1,6 +1,7 @@
 .header-menu {
   background-color: #3f0e40;
   display: flex;
+	justify-content: space-between;
   .p-history {
     width: 260px;
     height: 44px;
@@ -22,9 +23,9 @@
     }
   }
   .p-search {
-    flex: 1 1 auto;
     display: flex;
     align-items: center;
+		position: relative;
     & > a {
       width: 732px;
       display: flex;

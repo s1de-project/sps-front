@@ -1,15 +1,20 @@
 /* common */
 
 // font
+
+*[class^=fs-28] {
+  font-size: 28px !important;
+  font-weight: bold;
+}
 *[class^=fs-18] {
-  font-size: 18px;
+  font-size: 18px !important;
   font-weight: bold;
   &.fs-18-wh {
     color: #fff;
   }
 }
 *[class^=fs-13] {
-  font-size: 13px;
+  font-size: 13px !important;
   font-weight: normal;
   &.fs-13-wh {
     color: #fff;
@@ -27,6 +32,13 @@
 .cl-blue {
   color: #1164a3;
 }
+// 링크
+.link {
+	color: #1164a3;
+	&:hover {
+		text-decoration: underline;
+	}
+}
 // 숨김 class
 .blind {
   overflow: hidden;
@@ -42,6 +54,9 @@
 	}
   .p-content-area {
     padding: 20px;
+		overflow-y: auto;
+		height: 100%;
+		background-color: #f1f1f1;
   }
 }
 // flex
@@ -60,6 +75,10 @@
   justify-content: space-between;
   align-items: center;
 }
+.flex-s-b {
+	display: flex;
+	justify-content: baseline;
+}
 // 여백
 .mt-10 {
   margin-top: 10px;
@@ -69,6 +88,9 @@
 }
 .mr-10 {
   margin-right: 10px;
+}
+.mb-5 {
+  margin-bottom: 5px;
 }
 .mb-10 {
   margin-bottom: 10px;
@@ -357,6 +379,11 @@
 				transition: .3s;
 			}
 		}
+		&.btn-type2-gy {
+			color: #333;
+			background-color: #dddddd;
+			border: none;
+		}
 	}
 }
 /* modal */
@@ -367,16 +394,241 @@
 		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
 		width: 520px;
-		height: 520px;
 		background-color: #fff;
 		z-index: 2;
 		display: none;
+		border-radius: 10px;
+		.modal-header {
+			padding: 20px 30px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			a {
+				padding: 8px;
+				&:hover {
+					background-color: #f8f8f8;
+				}
+				.ico-close {
+					img {
+						width: 15px;
+						height: 15px;
+					}
+				}
+			}
+		}
+		.modal-content {
+			padding: 0 30px;
+			max-height: 350px;
+			overflow-y: auto;
+			.switch-area {
+				margin-top: 20px;
+				dl {
+					dd {
+						p {
+							display: none;
+							color: #1d1c1db3;
+							max-width: 306px;
+							&.on {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+		.modal-bottom {
+			padding: 20px 30px 30px;
+		}
 	}
 	&.on {
+		&.modal-bg-trans {
+			.modal-bg {
+				background-color: transparent;
+			}
+		}
 		.modal-bg {
 			display: block;
-			background-color: rgba(0, 0, 0, 0.233);
+			background-color: rgba(0, 0, 0, 0.5);
 		}
+		.modal-basic {
+			display: block;
+		}
+		.search-modal {
+			display: block;
+		}
+	}
+	.search-modal {
+		display: none;
+		position: absolute;
+		top: 5px;
+		left: 0;
+		width: 800px;
+		background-color: #fff;
+		border-radius: 10px;
+		border: 1px solid #ccc;
+		z-index: 2;
+		*[class^=ico-] {
+			img {
+				width: 20px;
+				height: 20px;
+				filter: none;
+			}
+		}
+		.search-content {
+			.f-category {
+				padding: 20px 30px;
+				ul {
+					display: flex;
+					margin-top: 10px;
+					li {
+						margin-left: 10px;
+						a {
+							display: block;
+							padding: 10px;
+							background-color: #1d9bd11a;
+							border-radius: 4px;
+							font-weight: bold;
+							&:hover {
+								background-color: #1264a3;
+								color: #fff;
+								*[class^=ico-] {
+									img {
+										width: 20px;
+										height: 20px;
+										filter: invert(1);
+									}
+								}
+							}
+						}
+						&:first-child {
+							margin-left: 0;
+						}
+					}
+				}
+			}
+			.last-search {
+				margin-bottom: 10px;
+				p {	
+					padding: 0 30px;
+				}
+				ul {
+					margin-top: 10px;
+					li {
+						position: relative;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						a {
+							display: block;
+							width: 100%;
+							font-weight: bold;
+							padding: 10px 30px 10px 60px;
+							&:before {
+								content: "";
+								background: url("../images/icon/ico-clock.png");
+								background-size: 20px 20px;
+								position: absolute;
+								top: 50%;
+								left: 30px;
+								transform: translateY(-50%);
+								width: 20px;
+								height: 20px;
+							}
+							span {
+								font-weight: normal;
+								display: none;
+							}
+						}
+						button {
+							display: none;
+							.ico-close {
+								margin-right: 30px;
+								img {
+									width: 12px;
+									height: 12px;
+								}
+							}
+						}
+						&:hover {
+							background-color : #1264a3;
+							a {
+								color: #fff;
+								&:before {
+									content: "";
+									filter: invert(1)
+								}
+								span {
+									display: inline-block;
+								}
+							}
+							*[class^=ico-] {
+								img {
+									filter: invert(1);
+								}
+							}
+							button {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+			.search-bottom {
+				background-color: #f8f8f8;
+				border-radius: 10px;
+				display: flex;
+				justify-content: flex-end;
+				padding: 10px 30px;
+				font-size: 13px;
+				p {
+					margin-right: 10px;
+				}
+				a {
+					color: #1264a3;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		.close-btn {
+			position: absolute;
+			top: 15px;
+			right: 30px;
+		}
+	}
+}
+/* tab 메뉴 */
+.tab-cont-wrap {
+	height: 100%;
+	.tab-btn {
+		display: flex;
+		border-bottom: 1px solid #ccc;
+		padding: 20px 20px 0 20px;
+		li {
+			margin-left: 30px;
+			&:first-child {
+				margin-left: 0;
+			}
+			&.active {
+				a {
+					border-bottom: 2px solid #007a5a;
+				}
+			}
+			a {
+				display: block;
+				font-weight: bold;
+				font-size: 13px;
+				padding-bottom: 10px;
+				span {
+					font-weight: normal;
+				}
+			}
+		}
+	}
+	.tab-content {
+		
+		height: 100%;
 	}
 }
 
@@ -387,6 +639,7 @@
 	border-radius: 4px;
 	padding: 10px 10px 10px 40px;
 	position: relative;
+	background-color: #fff;
 	&::before {
 		content: "";
 		background: url('../images/icon/ico-search.png') no-repeat 0 0;
@@ -401,5 +654,262 @@
 	&:hover {
 		border-color: #333;
 		transition: .3s;
+	}
+}
+.search-box-type2 {
+	position: relative;
+	padding: 15px 60px 15px 60px;
+	border-bottom: 1px solid #ccc;
+	display: flex;
+	&::before {
+		content: "";
+		background: url('../images/icon/ico-search.png') no-repeat 0 0;
+		background-size: 20px 20px;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 50%;
+		left: 30px;
+		transform: translateY(-50%);
+	}
+}
+// input box
+.input-box-wrap {
+	margin-top: 20px;
+	dt {
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+}
+.input-box {
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 4px;
+	input {
+		font-size: 18px;
+		&::placeholder {
+			font-size: 18px;
+		}
+	}
+}
+// switch btn
+.switch-btn-wrap {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+	.switch {
+		position: absolute;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		&:checked+.switch-label {
+			background: #007a5a;
+			border: 2px solid #007a5a;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: url("../images/icon/ico-check-wh.png") no-repeat 0 0;
+				background-size: 30px 30px;
+				width: 30px;
+				height: 30px;
+			}
+		}
+		&:checked+.switch-label .onf-btn {
+			left: 26px;
+			background: #fff;
+			box-shadow: 1px 2px 3px #00000020;
+		}
+	}
+	.switch-label {
+		position: relative;
+		cursor: pointer;
+		display: inline-block;
+		width: 54px;
+		height: 30px;
+		background: #fff;
+		border: 2px solid #ccc;
+		border-radius: 20px;
+		transition: 0.2s;
+		.onf-btn {
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border-radius: 20px;
+			background: #666;
+			transition: 0.2s;
+		}
+	}
+}
+// select-box
+.select-box-wrap {
+	position: relative;
+	margin-right: 10px;
+	.select-btn {
+		border: 1px solid #ccc;
+		display: block;
+		padding: 5px 30px 5px 5px;
+		border-radius: 4px;
+		position: relative;
+		transition: .3s;
+		&.no-border {
+			border: none;
+			display: inline-block;
+			opacity: 0.7;
+			cursor: pointer;
+			&:hover {
+				background-color: #fff;
+				opacity: 1;
+			}
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 12px;
+			width: 5px;
+			height: 5px;
+			border-bottom: 2px solid #1d1c1db3;
+			border-right: 2px solid #1d1c1db3;
+			transform: rotate(45deg) translateY(-50%);
+			transition: .3s;
+		}
+		&:hover {
+			background-color: #dddddd;
+		}
+	}
+	.select-option {
+		display: none;
+		position: absolute;
+		top: 35px;
+		left: 0;
+		z-index: 2;
+		width: 280px;
+		background-color: #f7f7f7;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		padding: 10px 0;
+		.division {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+			.search-box {
+				margin: 0 20px;
+			}
+		}
+		.check-list {
+			& > p {
+				padding: 0 20px;
+			}
+		}
+		*[class^=select-item] {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			padding: 5px 20px;
+			&:hover {
+				background-color: #1264a3;
+				color: #fff;
+				a {
+					color: #fff;
+				}
+			}
+			&.checked {
+				a {
+					color: #1264a3;
+					font-weight: bold;
+					position: relative;
+					&:before {
+						content: "";
+						background: url("../images/icon/ico-check-wh.png") no-repeat 0 0;
+						position: absolute;
+						top: 0;
+						left: -20px;
+						filter: opacity(0.5) drop-shadow(0 0 0 blue);
+						width: 20px;
+						height: 20px;
+						background-size: 20px 20px;
+					}
+				}
+				&:hover {
+					a {
+						color: #fff;
+						&:before {
+							filter: none;
+						}
+					}
+				}
+			}
+			&.select-item-check {
+				margin-top: 10px;
+				div {
+					margin-left: 10px;
+					input {
+						width: 15px;
+						height: 15px;
+					}
+					&:first-child {
+						margin-left: 0;
+					}
+					&.ico-user img {
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+		}
+	}
+	&.on {
+		.select-btn {
+			background-color: #ddd;
+			&.no-border {
+				background-color: #fff;
+			}
+			&::after {
+				transform: rotate(225deg);
+				transition: .3s;
+			}
+		}
+		.select-option {
+			display: block;
+		}
+		.modal-bg {
+			display: block;
+		}
+	}
+}
+
+/* notice-info */
+.notice-info {
+	margin-top: 20px;
+	border: 1px solid #ccc;
+	background-color: #e6e6e6;
+	border-radius: 10px;
+	padding: 15px;
+	display: flex;
+	line-height: 1.5;
+	.ico-clock {
+		margin-right: 10px;
+		img {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}
+/* card item */
+.card-item {
+	border: 1px solid #ccc;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 10px;
+	.ico-user {
+		img {
+			width: 36px;
+			height: 36px;
+		}
 	}
 }
