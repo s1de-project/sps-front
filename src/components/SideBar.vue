@@ -98,28 +98,14 @@
       </a>
     </div>
     <div class="p-list">
-      <div class="p-list-item">
-        <router-link to="/">
+      <div class="p-list-item" v-for="etc in etcList" v-bind:key="etc.no"
+            v-bind:class="{on: etc.no===checkedNo && checked==='etc' }" 
+            @click="checkItem('etc', etc.no)">
+        <router-link :to="etc.path">
           <div class="ico-company">
-            <img src="../assets/images/icon/ico-company.png" alt="">
+            <img :src="etc.icon" alt="">
           </div>
-          <p>Page List</p>
-        </router-link>
-      </div>
-      <div class="p-list-item">
-        <router-link to="/TestGuide">
-          <div class="ico-company">
-            <img src="../assets/images/icon/ico-company.png" alt="">
-          </div>
-          <p>GUIDE</p>
-        </router-link>
-      </div>
-      <div class="p-list-item">
-        <router-link to="/ChannelBrowser">
-          <div class="ico-company">
-            <img src="../assets/images/icon/ico-company.png" alt="">
-          </div>
-          <p>채널 브라우저</p>
+          <p>{{etc.name}}</p>
         </router-link>
       </div>
       <div class="p-list-item menu-list-wrap">
@@ -210,29 +196,15 @@
 				<div class="modal-bg" @click="rightList">
 				</div>
         <div class="accordion-menu" v-bind:class="{ on : isOn3 }">
-          <ul @click="selectItem($event)">
-            <li>
+          <ul>
+            <li v-for="channel in channelList" v-bind:key="channel.no"
+                v-bind:class="{on: channel.no===checkedNo && checked==='channel' }" 
+                @click="checkItem('channel', channel.no)">
               <a href="#">
                 <div class="ico-hash">
                   <img src="../assets/images/icon/ico-hash.png" alt="">
                 </div>
-                <p>랜덤</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="ico-hash">
-                  <img src="../assets/images/icon/ico-hash.png" alt="">
-                </div>
-                <p>일반</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="ico-hash">
-                  <img src="../assets/images/icon/ico-hash.png" alt="">
-                </div>
-                <p>test</p>
+                <p>{{channel.name}}</p>
               </a>
             </li>
             <li class="add-btn menu-list-wrap" :class="{ on : isOn2 }">
@@ -261,21 +233,15 @@
       <div class="p-list-item accordion-menu-wrap">
         <a href="#" @click="toggleInfo4">다이렉트 메시지</a>
         <div class="accordion-menu " :class="{ on : isOn4 }">
-          <ul @click="selectItem($event)">
-            <li class="user-display on">
+          <ul >
+            <li v-for="dm in dmList" v-bind:key="dm.no" class="user-display" 
+                v-bind:class="{on: dm.no===checkedNo && checked==='dm' }" 
+                @click="checkItem('dm', dm.no)">
               <a href="#">
                 <div class="ico-user">
-                  <img src="../assets/images/icon/ico-user.png" alt="">
+                  <img :src="dm.profilePicture" alt="">
                 </div>
-                <p>강민지 <span>나</span></p>
-              </a>
-            </li>
-            <li class="user-display">
-              <a href="#">
-                <div class="ico-user">
-                  <img src="../assets/images/icon/ico-user.png" alt="">
-                </div>
-                <p>남동윤</p>
+                <p>{{dm.name}} <span v-if="dm.no===me">나</span></p>
               </a>
             </li>
             <li class="add-btn type2">
@@ -302,6 +268,60 @@
         isOn3 : true,
         isOn4 : true,
         isActive : false,
+        me: 1,
+        checked: "dm", //dm, channel, etc
+        checkedNo: 1,
+        dmList : [
+          {
+            no:0,
+            name: "남동윤",
+            profilePicture: require("../assets/images/icon/ico-user.png")
+          },
+          {
+            no:1,
+            name: "최석준",
+            profilePicture: require("../assets/images/icon/ico-user.png")
+          },
+          {
+            no:2,
+            name: "강민지",
+            profilePicture: require("../assets/images/icon/ico-user.png")
+          }
+        ],
+        channelList : [
+          {
+            no:0,
+            name: "랜덤",
+          },
+          {
+            no:1,
+            name: "일반",
+          },
+          {
+            no:2,
+            name: "테스트",
+          },
+        ],
+        etcList:[
+          {
+            no:0,
+            name: "Page List",
+            path: "/",
+            icon: require("../assets/images/icon/ico-company.png")
+          },
+          {
+            no:1,
+            name: "GUIDE",
+            path: "/TestGuide",
+            icon: require("../assets/images/icon/ico-company.png")
+          },
+          {
+            no:2,
+            name: "채널 브라우저",
+            path: "/ChannelBrowser",
+            icon: require("../assets/images/icon/ico-company.png")
+          },
+        ]
       }
     },
     methods: {
@@ -322,7 +342,11 @@
 			},
 			selectItem(event) {
 				event.target.parentNode.classList.toggle("on");
-			}
+			},
+      checkItem: function(checked, checkedNo){
+        this.checked = checked;
+        this.checkedNo = checkedNo;
+      }
     }
   }
 </script>
