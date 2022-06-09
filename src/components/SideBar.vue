@@ -217,7 +217,7 @@
 							<div class="menu-list">
 								<div class="menu-item">
 									<a href="#">
-										<p>새 채널 생성</p>
+										<p v-on:click="showCreateModal">새 채널 생성</p>
 									</a>
 									<a href="#">
 										<p>모든 채널 탐색</p>
@@ -271,6 +271,7 @@
         me: 1,
         checked: "dm", //dm, channel, etc
         checkedNo: 1,
+        showModal: false,
         dmList : [
           {
             no:0,
@@ -346,6 +347,10 @@
       checkItem: function(checked, checkedNo){
         this.checked = checked;
         this.checkedNo = checkedNo;
+      },
+      showCreateModal: function(){
+        this.toggleInfo2();
+        this.$emit('showCreateChannel')
       }
     }
   }
