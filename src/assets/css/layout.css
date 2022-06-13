@@ -138,4 +138,83 @@
   -webkit-transition: .3s;
   transition: .3s;
 }
+
+.card-list-box {
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.card-list-box .list-item {
+  padding: 16px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid #ccc;
+  font-weight: 700;
+}
+
+.card-list-box .list-item:first-child {
+  border: none;
+}
+
+.card-list-box .list-item dl dt {
+  margin-bottom: 5px;
+}
+
+.card-list-box .list-item dl dd {
+  font-weight: 300;
+}
+
+.card-list-box .list-item dl dd input {
+  font-weight: 300;
+}
+
+.card-list-box .list-item div button {
+  font-weight: 700;
+}
+
+.search-list {
+  margin: 30px 0;
+}
+
+.search-list .list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+  padding: 0 30px;
+  cursor: pointer;
+}
+
+.search-list .list-item:hover {
+  background-color: #ccc;
+}
+
+.search-list .list-item .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-list .list-item .user .ico-user {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-list .list-item .user div {
+  margin-right: 10px;
+}
 /*# sourceMappingURL=layout.css.map */

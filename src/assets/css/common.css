@@ -39,6 +39,10 @@
   color: #1164a3;
 }
 
+.cl-pink {
+  color: #e01e5a;
+}
+
 .link {
   color: #1164a3;
 }
@@ -70,6 +74,12 @@
   overflow-y: auto;
   height: 100%;
   background-color: #f1f1f1;
+}
+
+/* bg */
+.bg-graybox {
+  background-color: #f8f8f8;
+  padding: 16px 20px;
 }
 
 .flex-c {
@@ -117,6 +127,15 @@
           justify-content: baseline;
 }
 
+.flex-e {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .mt-10 {
   margin-top: 10px;
 }
@@ -135,6 +154,19 @@
 
 .mb-10 {
   margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.p-30 {
+  padding: 0 30px;
+}
+
+.m-30 {
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
 .tooltip {
@@ -546,6 +578,10 @@
   padding: 0 30px;
   max-height: 350px;
   overflow-y: auto;
+}
+
+.modal-wrap .modal-basic .modal-content.content-wide {
+  padding: 0;
 }
 
 .modal-wrap .modal-basic .modal-content .switch-area {
@@ -1301,8 +1337,7 @@ input[type="tel"]:disabled,
 input[type="tel"][readonly],
 input[type="file"]:disabled,
 input[type="file"][readonly] {
-  background-color: #f2f2f2;
-  color: #999;
+  background-color: transparent;
 }
 
 input[type="checkbox"] {

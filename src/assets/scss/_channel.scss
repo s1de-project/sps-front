@@ -118,3 +118,61 @@
 		}
 	}
 }
+// 채널 modal
+.card-list-box {
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	.list-item {
+		padding: 16px 20px;
+		display: flex;
+		justify-content: space-between;
+		border-top: 1px solid #ccc;
+		font-weight: 700;
+		&:first-child {
+			border: none;
+		}
+		dl {
+			dt {
+				margin-bottom: 5px;
+			}
+			dd {
+				font-weight: 300;
+				input {
+					font-weight: 300;
+				}
+			}
+		}
+		div {
+			button {
+				font-weight: 700;
+			}
+		}
+	}
+}
+.search-list {
+	margin: 30px 0;
+	.list-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+		padding: 0 30px;
+		&:hover {
+			background-color: #ccc;
+		}
+		cursor: pointer;
+		.user {
+			display: flex;
+			align-items: center;
+			.ico-user {
+				border-radius: 4px;
+				overflow: hidden;
+			}
+			div {
+				margin-right: 10px;
+			}
+		}
+
+	}
+}
