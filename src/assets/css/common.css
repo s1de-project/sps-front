@@ -1431,6 +1431,10 @@ body {
           filter: invert(1);
 }
 
+.side-bar .p-list .p-list-item.on {
+  background-color: #10619e;
+}
+
 .side-bar .accordion-menu-wrap {
   margin-top: 20px;
 }
