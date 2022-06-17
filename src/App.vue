@@ -31,7 +31,8 @@ export default {
       this.showModal = !this.showModal
     },
     createChannel: function(channelName,channelTopic){
-      console.log(channelName, channelTopic);
+      var obj = {name: channelName, channelTopic}
+      console.log(obj);
     }
   }
 }
