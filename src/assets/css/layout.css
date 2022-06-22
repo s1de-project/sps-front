@@ -177,6 +177,10 @@
   font-weight: 700;
 }
 
+.card-list-box .list-item div button:hover {
+  text-decoration: underline;
+}
+
 .search-list {
   margin: 30px 0;
 }
@@ -216,5 +220,9 @@
 
 .search-list .list-item .user div {
   margin-right: 10px;
+}
+
+.search-list .list-item div button:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=layout.css.map */

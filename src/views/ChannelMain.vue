@@ -61,7 +61,7 @@
 											</div>
 											<div class="list-item">
 												<div>
-													<span class="cl-pink">이 채널 삭제</span>
+													<button class="cl-pink">이 채널 삭제</button>
 												</div>
 											</div>
 										</div>
@@ -106,7 +106,7 @@
 													<div>홍길동</div>
 												</div>
 												<div class="fs-13">
-													<button class="cl-blue">제거</button>
+													<button class="cl-blue exile-btn">제거</button>
 												</div>
 											</a>
 										</div>
@@ -121,6 +121,15 @@
 						</div>
 					</div>
 					<div class="modal-bg" @click="toggleInfo"></div>
+				</div>
+				<div class="modal-type2">
+					<div class="modal-content">
+						이 멤버를 제거하시겠습니까?
+					</div>
+					<div class="modal-bottom">
+						<button>제거</button>
+						<button>취소</button>
+					</div>
 				</div>
       </div>
 		</div>
