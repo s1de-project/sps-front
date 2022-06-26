@@ -2,8 +2,8 @@
   <div class="side-bar">
     <div class="p-head">
       <!-- class="on" 추가시 펼쳐짐-->
-      <div class="p-info menu-list-wrap">
-        <a href="javascript:void(0)" class="fs-18-wh" @click="toggleInfo($event)"><span>{{ projectName }}</span></a>
+      <div class="p-info menu-list-wrap" :class="{ on : isOn }">
+        <a href="javascript:void(0)" class="fs-18-wh" @click="toggleInfo"><span>{{ projectName }}</span></a>
         <div class="menu-list">
           <div class="menu-item">
             <router-link to="/">
@@ -98,7 +98,7 @@
       </a>
     </div>
     <div class="p-list">
-      <div class="p-list-item" v-for="etc in etcList" v-bind:key="etc.no"
+      <div class="p-list-item" v-for="etc in this.$store.state.etcList" v-bind:key="etc.no"
             v-bind:class="{on: etc.no===checkedNo && checked==='etc' }" 
             @click="checkItem('etc', etc.no)">
         <router-link :to="etc.path">
@@ -197,7 +197,7 @@
 				</div>
         <div class="accordion-menu" v-bind:class="{ on : isOn3 }">
           <ul>
-            <li v-for="channel in channelList" v-bind:key="channel.no"
+            <li v-for="channel in this.$store.state.channelList" v-bind:key="channel.no"
                 v-bind:class="{on: channel.no===checkedNo && checked==='channel' }" 
                 @click="checkItem('channel', channel.no)">
               <a href="#">
@@ -234,7 +234,7 @@
         <a href="#" @click="toggleInfo4">다이렉트 메시지</a>
         <div class="accordion-menu " :class="{ on : isOn4 }">
           <ul >
-            <li v-for="dm in dmList" v-bind:key="dm.no" class="user-display" 
+            <li v-for="dm in this.$store.state.dmList" v-bind:key="dm.no" class="user-display" 
                 v-bind:class="{on: dm.no===checkedNo && checked==='dm' }" 
                 @click="checkItem('dm', dm.no)">
               <a href="#">
@@ -264,6 +264,7 @@
     data() {
       return {
         projectName: "Side Project(PaaS-TA)",
+        isOn: false,
         isOn2 : false,
         isOn3 : true,
         isOn4 : true,
@@ -272,62 +273,12 @@
         checked: "dm", //dm, channel, etc
         checkedNo: 1,
         showModal: false,
-        dmList : [
-          {
-            no:0,
-            name: "남동윤",
-            profilePicture: require("../assets/images/icon/ico-user.png")
-          },
-          {
-            no:1,
-            name: "최석준",
-            profilePicture: require("../assets/images/icon/ico-user.png")
-          },
-          {
-            no:2,
-            name: "강민지",
-            profilePicture: require("../assets/images/icon/ico-user.png")
-          }
-        ],
-        channelList : [
-          {
-            no:0,
-            name: "랜덤",
-          },
-          {
-            no:1,
-            name: "일반",
-          },
-          {
-            no:2,
-            name: "테스트",
-          },
-        ],
-        etcList:[
-          {
-            no:0,
-            name: "Page List",
-            path: "/",
-            icon: require("../assets/images/icon/ico-company.png")
-          },
-          {
-            no:1,
-            name: "GUIDE",
-            path: "/TestGuide",
-            icon: require("../assets/images/icon/ico-company.png")
-          },
-          {
-            no:2,
-            name: "채널 브라우저",
-            path: "/ChannelBrowser",
-            icon: require("../assets/images/icon/ico-company.png")
-          },
-        ]
       }
     },
     methods: {
-			toggleInfo(event) {
-				event.target.parentNode.classList.toggle("on")
+			toggleInfo() {
+				// event.target.parentNode.classList.toggle("on")
+        this.isOn = !this.isOn;
 			},
       toggleInfo2() {
         this.isOn2 = !this.isOn2;
