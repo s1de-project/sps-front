@@ -66,7 +66,7 @@
 }
 
 .p-section > div:not(.side-bar) {
-  width: calc(100vw - 260px);
+  width: calc(100vw - 320px);
 }
 
 .p-section .p-content-area {
@@ -82,7 +82,7 @@
   padding: 16px 20px;
 }
 
-.flex-c {
+#app .flex-c {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -599,6 +599,50 @@
   display: block;
 }
 
+.modal-wrap .modal-basic .modal-content .selected-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 25px 0;
+}
+
+.modal-wrap .modal-basic .modal-content .selected-item p {
+  font-size: 18px;
+}
+
+.modal-wrap .modal-basic .modal-content .ws-list {
+  padding-bottom: 50px;
+}
+
+.modal-wrap .modal-basic .modal-content .ws-list ul {
+  margin-top: 20px;
+}
+
+.modal-wrap .modal-basic .modal-content .ws-list ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 16px 0;
+}
+
+.modal-wrap .modal-basic .modal-content .ws-list ul li label {
+  margin-left: 15px;
+}
+
+.modal-wrap .modal-basic .modal-content .naming dl {
+  margin-bottom: 5px;
+}
+
 .modal-wrap .modal-basic .modal-bottom {
   padding: 20px 30px 30px;
 }
@@ -799,17 +843,51 @@
   right: 30px;
 }
 
-.modal-type2 {
+*[class^='modal-type'] {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50% -50%);
-          transform: translate(-50% -50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   width: 300px;
-  height: 200px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
+  padding: 30px;
+  font-size: 18px;
+  text-align: center;
+  display: none;
+  z-index: 15;
+}
+
+*[class^='modal-type'].on {
+  display: block;
+}
+
+*[class^='modal-type'] .modal-header {
+  font-weight: 700;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+*[class^='modal-type'] .modal-bottom {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+*[class^='modal-type'] .modal-bottom button {
+  padding: 15px 40px;
+  background-color: #eee;
+  border-radius: 14px;
+}
+
+*[class^='modal-type'].modal-type3 {
+  width: 500px;
 }
 
 /* tab 메뉴 */
@@ -1370,20 +1448,63 @@ body {
 
 .side-bar {
   background-color: #3f0e40;
-  width: 260px;
+  width: 320px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid rgba(255, 255, 255, 0.151);
 }
 
-.side-bar .p-head {
+.side-bar .w-list {
+  border-right: 1px solid rgba(255, 255, 255, 0.151);
+  width: 50px;
+}
+
+.side-bar .w-list > ul {
+  padding: 0 7px;
+}
+
+.side-bar .w-list > ul > li {
+  margin-top: 10px;
+}
+
+.side-bar .w-list > ul > li > a {
+  display: block;
+  width: 35px;
+  height: 35px;
+  background-color: #666;
+  color: #fff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.side-bar .w-list > ul > li > a.plus-btn {
+  background: transparent;
+}
+
+.side-bar .w-list > ul > li > a.on {
+  border: 2px solid #fff;
+}
+
+.side-bar .s-menu .p-head {
   height: 50px;
   position: relative;
   border-bottom: 1px solid rgba(255, 255, 255, 0.151);
 }
 
-.side-bar .p-head .p-info.menu-list-wrap .menu-list {
+.side-bar .s-menu .p-head .p-info.menu-list-wrap .menu-list {
   width: 300px;
 }
 
-.side-bar .p-head .p-info > a {
+.side-bar .s-menu .p-head .p-info > a {
   width: 100%;
   height: 50px;
   display: -webkit-box;
@@ -1395,7 +1516,7 @@ body {
   padding: 0 54px 0 16px;
 }
 
-.side-bar .p-head .p-info > a span {
+.side-bar .s-menu .p-head .p-info > a span {
   position: relative;
   padding-right: 10px;
   max-width: 185px;
@@ -1404,7 +1525,7 @@ body {
   white-space: nowrap;
 }
 
-.side-bar .p-head .p-info > a span:after {
+.side-bar .s-menu .p-head .p-info > a span:after {
   content: "";
   width: 6px;
   height: 6px;
@@ -1419,12 +1540,12 @@ body {
   transition: .3s;
 }
 
-.side-bar .p-head .p-info.on > a span:after {
+.side-bar .s-menu .p-head .p-info.on > a span:after {
   -webkit-transform: rotate(45deg) translateY(-50%);
           transform: rotate(45deg) translateY(-50%);
 }
 
-.side-bar .p-head .p-new-message {
+.side-bar .s-menu .p-head .p-new-message {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -1433,7 +1554,7 @@ body {
   display: block;
 }
 
-.side-bar .p-head .p-new-message .ico-message {
+.side-bar .s-menu .p-head .p-new-message .ico-message {
   width: 34px;
   height: 34px;
   background-color: #fff;
@@ -1449,17 +1570,17 @@ body {
           align-items: center;
 }
 
-.side-bar .p-head .p-new-message .ico-message img {
+.side-bar .s-menu .p-head .p-new-message .ico-message img {
   width: 18px;
   height: 18px;
 }
 
-.side-bar .p-list {
+.side-bar .s-menu .p-list {
   padding: 10px 0;
   height: calc(100vh - 50px - 44px);
 }
 
-.side-bar .p-list .p-list-item > a {
+.side-bar .s-menu .p-list .p-list-item > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1471,16 +1592,16 @@ body {
   padding: 5px 25px;
 }
 
-.side-bar .p-list .p-list-item > a *[class^=ico-] {
+.side-bar .s-menu .p-list .p-list-item > a *[class^=ico-] {
   margin-right: 10px;
 }
 
-.side-bar .p-list .p-list-item > a *[class^=ico-].ico-message img {
+.side-bar .s-menu .p-list .p-list-item > a *[class^=ico-].ico-message img {
   -webkit-filter: invert(1);
           filter: invert(1);
 }
 
-.side-bar .p-list .p-list-item.on {
+.side-bar .s-menu .p-list .p-list-item.on {
   background-color: #10619e;
 }
 
@@ -1569,6 +1690,11 @@ body {
 }
 
 .side-bar *[class^=ico-].ico-message img {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.side-bar *[class^=ico-].ico-close.color img {
   -webkit-filter: none;
           filter: none;
 }

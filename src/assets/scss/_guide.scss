@@ -53,7 +53,7 @@
 .p-section {
   display: flex;
 	& > div:not(.side-bar) {
-		width: calc(100vw - 260px);
+		width: calc(100vw - 320px);
 	}
   .p-content-area {
     padding: 20px;
@@ -68,7 +68,7 @@
 	padding: 16px 20px;
 }
 // flex
-.flex-c {
+#app .flex-c {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -461,6 +461,35 @@
 					}
 				}
 			}
+			.selected-item {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin: 25px 0;
+				p {
+					font-size: 18px;
+				}
+			}
+			.ws-list {
+				padding-bottom: 50px;
+				ul {
+					margin-top: 20px;
+					li {
+						display: flex;
+						align-items: center;
+						border-bottom: 1px solid #ccc;
+						padding: 16px 0;
+						label {
+							margin-left: 15px;
+						}
+					}
+				}
+			}
+			.naming {
+				dl {
+					margin-bottom: 5px;
+				}
+			}
 		}
 		.modal-bottom {
 			padding: 20px 30px 30px;
@@ -624,16 +653,41 @@
 		}
 	}
 }
-.modal-type2 {
+*[class^='modal-type'] {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50% -50%);
+	transform: translateX(-50%) translateY(-50%);
 	width: 300px;
-	height: 200px;
 	background-color: #fff;
 	border: 1px solid #ccc;
 	border-radius: 10px;
+	padding: 30px;
+	font-size: 18px;
+	text-align: center;
+	display: none;
+	z-index: 15;
+	&.on {
+		display: block;
+	}
+	.modal-header {
+		font-weight: 700;
+		font-size: 20px;
+		padding-bottom: 20px;
+	}
+	.modal-bottom {
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
+		button {
+			padding: 15px 40px;
+			background-color: #eee;
+			border-radius: 14px;
+		}
+	}
+	&.modal-type3 {
+		width: 500px;
+	}
 }
 
 /* tab 메뉴 */

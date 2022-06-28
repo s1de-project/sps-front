@@ -3,12 +3,12 @@
 		<div class="title-area">
       <div class="c-info">
 				<div class="modal-wrap" :class="{ on : isOn }">
-					<a href="jacascript:void(0)" class="fs-18 modal-btn" @click="toggleInfo2">#개발</a>
+					<a href="javascript:void(0)" class="fs-18 modal-btn" @click="toggleInfo2">#개발</a>
 					<div class="modal-basic">
 						<div class="modal-header">
 							<div class="flex-s">
 								<p class="fs-28">#개발</p>
-								<a href="jacascript:void(0)" class="tooltip">
+								<a href="javascript:void(0)" class="tooltip">
 									<div class="ico-message">
 										<img src="../assets/images/icon/ico-message.svg" alt="">
 									</div>
@@ -80,7 +80,7 @@
 													<div>홍길동</div>
 												</div>
 												<div class="fs-13">
-													<button class="cl-blue">제거</button>
+													<button class="cl-blue" @click="toggleInfo3">제거</button>
 												</div>
 											</a>
 										</div>
@@ -93,21 +93,13 @@
 													<div>홍길동</div>
 												</div>
 												<div class="fs-13">
-													<button class="cl-blue">제거</button>
+													<button class="cl-blue" @click="toggleInfo3">제거</button>
 												</div>
 											</a>
 										</div>
 										<div class="search-list">
-											<a href="javascript:void(0)" class="list-item">
-												<div class="user">
-													<div class="ico-user">
-														<img src="../assets/images/icon/ico-user.png" alt="사용자프로필">
-													</div>
-													<div>홍길동</div>
-												</div>
-												<div class="fs-13">
-													<button class="cl-blue exile-btn">제거</button>
-												</div>
+											<a href="javascript:void(0)" class="list-item" @click="toggleInfo4">
+												+ 사용자 초대하기
 											</a>
 										</div>
 									</div>
@@ -116,19 +108,40 @@
 						</div>
 						<div class="modal-bottom flex-e">
 							<div>
-								<button class="btn-type2-gy">나가기</button>
+								<button class="btn-type2-gy" @click="toggleInfo2">나가기</button>
 							</div>
 						</div>
 					</div>
 					<div class="modal-bg" @click="toggleInfo"></div>
 				</div>
-				<div class="modal-type2">
+				<div class="modal-type2" :class="{ on : isOn2 }">
 					<div class="modal-content">
 						이 멤버를 제거하시겠습니까?
 					</div>
 					<div class="modal-bottom">
-						<button>제거</button>
-						<button>취소</button>
+						<button @click="toggleInfo3">제거</button>
+						<button @click="toggleInfo3">취소</button>
+					</div>
+				</div>
+				<div class="modal-type3" :class="{ on : isOn3 }">
+					<div class="modal-header flex-sb">
+						<p>Side Project(PaaS-TA)(으)로 사용자 초대</p>
+						<a href="javascript:;" @click="toggleInfo4">
+							<div class="ico-close">
+								<img src="../assets/images/icon/ico-close.png" alt="닫기">
+							</div>
+						</a>
+					</div>
+					<div class="modal-content">
+						<dl class="input-box-wrap">
+							<dt>받는 사람</dt>
+							<dd class="input-box">
+								<input v-model="channelName" type="text" placeholder="# 예: 플랜 예산">
+							</dd>
+						</dl>
+					</div>
+					<div class="modal-bottom flex-c">
+						<button @click="toggleInfo4">보내기</button>
 					</div>
 				</div>
       </div>
@@ -146,6 +159,8 @@
 				currentTab: 0,
 				tabs: ['정보', '멤버1'],
         isOn : false,
+        isOn2 : false,
+        isOn3 : false,
         showModal: false,
       }
     },
@@ -155,6 +170,12 @@
 			},
       toggleInfo2() {
         this.isOn = !this.isOn;
+      },
+      toggleInfo3() {
+        this.isOn2 = !this.isOn2;
+      },
+      toggleInfo4() {
+        this.isOn3 = !this.isOn3;
       },
     }
 	}
