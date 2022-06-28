@@ -146,8 +146,78 @@
 				</div>
       </div>
 		</div>
-		<div class="p-content-area">
-			
+		<div class="p-content-area chat">
+			<div class="chat-wrap">
+				<div class="chat-con">
+					<div class="chat-first">
+						<div class="ico-user">
+							<img src="../assets/images/icon/ico-user.png" alt="">
+						</div>
+						<div>
+							<div>
+								<strong><span class="cl-blue">#프론트</span>채널의 맨 첫 부분입니다.</strong>
+							</div>
+							<p>날짜: 5월 26일에 이 채널을 생성했습니다.</p>
+						</div>
+					</div>
+					<div class="chat-day">
+						<div class="select-box-wrap">
+							<button class="select-btn" @click="toggleInfo($event)">5월 26일 목요일</button>
+							<div class="select-option">
+								<div class="division">
+									<p class="fs-13-gy">다음으로 이동</p>
+									<div class="menu-item">
+										<a href="#">
+											<p>최근</p>
+										</a>
+									</div>
+									<div class="menu-item">
+										<a href="#">
+											<p>지난달</p>
+										</a>
+									</div>
+								</div>
+								<div class="menu-item">
+									<a href="#">
+										<p>특정 날짜로 이동</p>
+									</a>
+								</div>
+							</div>
+							<div class="modal-bg" @click="toggleInfo($event)">
+							</div>
+						</div>
+					</div>
+					<div class="chat-detail">
+						<div class="ico-user">
+							<img src="../assets/images/icon/ico-user.png" alt="">
+						</div>
+						<div>
+							<div>
+								<strong>강민지</strong>
+								<span>오후 1:07</span>
+							</div>
+							<p>#프론트에 4명의 다른 사용자와 함께 다시 참여했습니다.</p>
+						</div>
+					</div>
+					<div class="chat-detail">
+						<div class="ico-user">
+							<img src="../assets/images/icon/ico-user.png" alt="">
+						</div>
+						<div>
+							<div>
+								<strong>강민지</strong>
+								<span>오후 1:07</span>
+							</div>
+							<div>
+								프론트도 채널 만들어보았어요
+							</div>
+						</div>
+					</div>
+					<div class="chat-text">
+						<textarea placeholder="#개발에 메시지 보내기"></textarea>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
