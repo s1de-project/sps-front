@@ -296,6 +296,18 @@
   height: 36px;
 }
 
+.p-content-area.chat .chat-wrap .chat-con .chat-detail div div {
+  margin-top: 10px;
+}
+
+.p-content-area.chat .chat-wrap .chat-con .chat-detail div div:first-child {
+  margin-top: 0;
+}
+
+.p-content-area.chat .chat-wrap .chat-con .chat-detail div div strong {
+  margin-right: 10px;
+}
+
 .p-content-area.chat .chat-wrap .chat-con .chat-text {
   position: absolute;
   bottom: 70px;

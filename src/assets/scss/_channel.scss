@@ -239,6 +239,17 @@
 						height: 36px;
 					}
 				}
+				div {
+					div {
+						margin-top: 10px;
+						&:first-child {
+							margin-top: 0;
+						}
+						strong {
+							margin-right: 10px;
+						}
+					}
+				}
 			}
 			.chat-text {
 				position: absolute;
