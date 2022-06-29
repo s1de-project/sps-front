@@ -535,6 +535,12 @@
   border: none;
 }
 
+*[class^=btn-type][class^=btn-type2].btn-type2-bl {
+  color: #4989f4;
+  background-color: transparent;
+  border-color: #4989f4;
+}
+
 /* modal */
 .modal-wrap .modal-basic {
   position: absolute;
@@ -1990,5 +1996,57 @@ body {
 
 .page-list-wrap .page-list-content .tab-cont-wrap .tab-content .tb-con-wrap tr td .editlist a:hover ul {
   display: block;
+}
+
+.login-main {
+  background-color: #3f0e40;
+  color: #fff;
+  height: 100vh;
+  position: relative;
+}
+
+.login-main .txt-box {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.login-main .txt-box h1 a {
+  display: inline-block;
+  color: #fff;
+}
+
+.login-main .txt-box p {
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.login-detail {
+  height: 100vh;
+  position: relative;
+}
+
+.login-detail > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+}
+
+.login-detail > div h1 a {
+  display: inline-block;
+  font-weight: 900;
+}
+
+.login-detail > div p {
+  font-size: 50px;
+  font-weight: 700;
+  margin: 40px 0 80px 0;
 }
 /*# sourceMappingURL=common.css.map */

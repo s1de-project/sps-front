@@ -161,7 +161,7 @@
 											<td class="d2">메인</td>
 											<td class="d3"></td>
 											<td class="director">/</td>
-											<td class="file">TestGuide.vue</td>
+											<td class="file">main</td>
 											<td class="date">
 												<ul class="hislist">
 													<li>

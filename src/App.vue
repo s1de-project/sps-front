@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-    <channel-modal v-bind:propsdata="showModal" v-on:closeModal="toggleCreateChannel"></channel-modal>
-    <TopMenu />
-    <div class="p-section">
-      <SideBar v-on:showCreateChannel="toggleCreateChannel"
-                v-on:createChannel="createChannel"/>
-      <router-view/>
-    </div>
+		<div v-if=!user>
+			<router-view />
+		</div>
+		<div v-else>
+			<channel-modal v-bind:propsdata="showModal" v-on:closeModal="toggleCreateChannel"></channel-modal>
+			<TopMenu />
+			<div class="p-section">
+				<SideBar v-on:showCreateChannel="toggleCreateChannel"
+									v-on:createChannel="createChannel"/>
+				<router-view/>
+			</div>
+		</div>
   </div>
 </template>
 
@@ -18,7 +23,7 @@ import ChannelModal from '@/components/ChannelModal.vue'
 export default {
   data: function(){
     return {
-      showModal: false
+      showModal: false,
     }
   },
   components: {

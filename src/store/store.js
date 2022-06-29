@@ -77,7 +77,8 @@ export const store = createStore({
         HeaderText: 'TODO it!',
         channelList: channelStore.fetch(),
         dmList: dmStore.fetch(),
-        etcList: etcStore.fetch()
+        etcList: etcStore.fetch(),
+				user: false
 
     },
     mutations: {
