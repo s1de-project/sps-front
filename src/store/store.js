@@ -52,7 +52,7 @@ const etcStore = {
             {
                 no:0,
                 name: "Page List",
-                path: "/",
+                path: "/PageList",
                 icon: require("../assets/images/icon/ico-company.png")
             },
             {
