@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-		<div v-if=!user>
+		<div v-if=!$store.state.user>
 			<router-view />
 		</div>
 		<div v-else>
