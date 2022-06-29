@@ -174,12 +174,12 @@
 										<tr>
 											<td class="d2">페이지리스트</td>
 											<td class="d3"></td>
-											<td class="director">/</td>
+											<td class="director">/PageList</td>
 											<td class="file">PageList.vue</td>
 											<td class="date">
 												<ul class="hislist">
 													<li>
-														<a href="/" class="flag-end">22.05.26</a>
+														<a href="/PageList" class="flag-end">22.05.26</a>
 													</li>
 												</ul>
 											</td>
@@ -237,6 +237,63 @@
 												<ul class="hislist">
 													<li>
 														<router-link to="/ChannelMain" class="flag-end">22.06.10</router-link>
+													</li>
+												</ul>
+											</td>
+											<td class="memo"></td>
+										</tr>
+										<tr>
+											<td class="d1" rowspan="4">로그인</td>
+											<td class="d2">로그인메인</td>
+											<td class="d3"></td>
+											<td class="director">/LoginUser</td>
+											<td class="file">LoginUser.vue</td>
+											<td class="date">
+												<ul class="hislist">
+													<li>
+														<router-link to="/LoginUser" class="flag-end">22.06.29</router-link>
+													</li>
+												</ul>
+											</td>
+											<td class="memo"></td>
+										</tr>
+										<tr>
+											<td class="d2">로그인상세</td>
+											<td class="d3"></td>
+											<td class="director">/LoginDetail</td>
+											<td class="file">LoginDetail.vue</td>
+											<td class="date">
+												<ul class="hislist">
+													<li>
+														<router-link to="/LoginDetail" class="flag-end">22.06.29</router-link>
+													</li>
+												</ul>
+											</td>
+											<td class="memo"></td>
+										</tr>
+										<tr>
+											<td class="d2">워크스페이스 생성</td>
+											<td class="d3"></td>
+											<td class="director">/StartSlack</td>
+											<td class="file">StartSlack.vue</td>
+											<td class="date">
+												<ul class="hislist">
+													<li>
+														<router-link to="/StartSlack" class="flag-end">22.06.29</router-link>
+													</li>
+												</ul>
+											</td>
+											<td class="memo"></td>
+										</tr>
+										<tr>
+											<td class="d2">워크스페이스 리스트</td>
+											<td class="d3"></td>
+											<td class="director">/WorkspaceList</td>
+											<td class="file">WorkspaceList.vue</td>
+											<td class="date">
+												<ul class="hislist">
+													<li>
+														<router-link to="/WorkspaceList" class="flag-end">22.06.29</router-link>
 													</li>
 												</ul>
 											</td>
