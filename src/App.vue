@@ -24,6 +24,7 @@ export default {
   data: function(){
     return {
       showModal: false,
+
     }
   },
   components: {
@@ -31,6 +32,11 @@ export default {
     TopMenu,
     ChannelModal
   },
+	provide() {
+		return {
+			provideData: 'test provider'
+		}
+	},
   methods: {
     toggleCreateChannel: function(){
       this.showModal = !this.showModal
